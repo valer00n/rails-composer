@@ -236,6 +236,7 @@ prefs[:railsapps] = multiple_choice "Install an example application?",
   [["I want to build my own application", "none"], 
   ["rails3-bootstrap-devise-cancan", "rails3-bootstrap-devise-cancan"], 
   ["rails3-devise-rspec-cucumber", "rails3-devise-rspec-cucumber"], 
+  ["rails3-bootstrap-mongoid-devise", "rails3-bootstrap-mongoid-devise"],
   ["rails3-mongoid-devise", "rails3-mongoid-devise"],
   ["rails3-mongoid-omniauth", "rails3-mongoid-omniauth"],
   ["rails3-subdomains", "rails3-subdomains"]] unless prefs.has_key? :railsapps
@@ -304,6 +305,20 @@ case prefs[:railsapps]
     prefs[:authorization] = 'none'
     prefs[:starter_app] = 'users_app'
     prefs[:form_builder] = 'none'
+  when 'rails3-bootstrap-mongoid-devise'
+    prefs[:git] = true
+    prefs[:database] = 'mongodb'
+    prefs[:orm] = 'mongoid'
+    prefs[:unit_test] = 'rspec'
+    prefs[:integration] = 'cucumber'
+    prefs[:fixtures] = 'factory_girl'
+    prefs[:frontend] = 'bootstrap'
+    prefs[:email] = 'gmail'
+    prefs[:authentication] = 'devise'
+    prefs[:devise_modules] = 'default'
+    prefs[:authorization] = 'none'
+    prefs[:starter_app] = 'users_app'
+    prefs[:form_builder] = 'none'    
   when 'rails3-mongoid-omniauth'
     prefs[:git] = true
     prefs[:database] = 'mongodb'
